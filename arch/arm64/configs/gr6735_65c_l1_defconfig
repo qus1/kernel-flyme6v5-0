@@ -3099,7 +3099,7 @@ CONFIG_IOSCHED_BFQ=y
 CONFIG_CGROUP_BFQIO=y
 
 #/drivers/misc/mediatek/alsps/alsps.c and drivers/misc/mediatek/leds/mt6735/leds.c
-CONFIG_LCD_BACKLIGHT=y
+# CONFIG_LCD_BACKLIGHT is not set
 
 #vote for md, flyme4=5 // flyme5-6=6
 CONFIG_MTK_MD1_SUPPORT=6
