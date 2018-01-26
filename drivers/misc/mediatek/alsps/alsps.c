@@ -22,12 +22,7 @@ int non_wakeup_ps = 0;
 #endif
 /*dixiaobing@wind-mobi.com 20150525 end*/
 
-//qus1 enable with CONFIG_LCD_BACKLIGHT=y
-#ifdef CONFIG_LCD_BACKLIGHT
-int als_enable_flag = 1;
-#else
 int als_enable_flag = 0;
-#endif
 int als_data_report(struct input_dev *dev, int value, int status)
 {
 /*dixiaobing@wind-mobi.com 20150629 start*/
