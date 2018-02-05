@@ -353,7 +353,7 @@ int mt_led_blink_pmic(enum mt65xx_led_pmic pmic_type, struct nled_setting *led)
 		case MT65XX_LED_PMIC_NLED_ISINK0:
 			pmic_set_register_value(PMIC_RG_DRV_ISINK0_CK_PDN,0);
 			pmic_set_register_value(PMIC_RG_DRV_ISINK0_CK_CKSEL,0);
-			pmic_set_register_value(PMIC_ISINK_CH0_MODE,PMIC_PWM_0); //qus1 charger led 04022017
+			pmic_set_register_value(PMIC_ISINK_CH0_MODE,PMIC_PWM_0);
 #ifdef CONFIG_CPU_LOW_POWER
 			pmic_set_register_value(PMIC_ISINK_CH0_STEP,ISINK_0);//qus1 ISINK_0=4mA, def ISINK_3=16mA
 #else
@@ -361,7 +361,7 @@ int mt_led_blink_pmic(enum mt65xx_led_pmic pmic_type, struct nled_setting *led)
 #endif
 			pmic_set_register_value(PMIC_ISINK_DIM0_DUTY,duty);
 			pmic_set_register_value(PMIC_ISINK_DIM0_FSEL,pmic_freqsel_array[time_index]);			
-			pmic_set_register_value(PMIC_ISINK_CH0_EN,NLED_ON);	//gemingming@wind-mobi.com 20150702 //qus1 charger led 04022017 
+			//pmic_set_register_value(PMIC_ISINK_CH0_EN,NLED_ON);	//gemingming@wind-mobi.com 20150702 
 			break;
 		case MT65XX_LED_PMIC_NLED_ISINK1:
 			pmic_set_register_value(PMIC_RG_DRV_ISINK1_CK_PDN,0);
@@ -619,7 +619,7 @@ int mt_brightness_set_pmic(enum mt65xx_led_pmic pmic_type, u32 level, u32 div)
 
 				if (level) 
 				{
-					pmic_set_register_value(PMIC_ISINK_CH0_EN,NLED_ON); //qus1 charger led 04022017, def NLED_OFF					
+					pmic_set_register_value(PMIC_ISINK_CH0_EN,NLED_OFF);					
 				}
 				else 
 				{
